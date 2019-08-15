@@ -1,0 +1,35 @@
+const users = require('./users/users.service.js');
+const products = require('./products/products.service.js');
+const branches = require('./branches/branches.service.js');
+const customers = require('./customers/customers.service.js');
+const motorcycleModels = require('./motorcycle-models/motorcycle-models.service.js');
+const payments = require('./payments/payments.service.js');
+const permission = require('./permission/permission.service.js');
+const userPosition = require('./user-position/user-position.service.js');
+const reports = require('./reports/reports.service.js');
+const badRecords = require('./bad-records/bad-records.service.js');
+const brands = require('./brands/brands.service.js');
+const brand = require('./brand/brand.service.js');
+const transfers = require('./transfers/transfers.service.js');
+const payment = require('./payment/payment.service.js');
+const secondhand = require('./secondhand/secondhand.service.js');
+const customerSecondhandUnit = require('./customer-secondhand-unit/customer-secondhand-unit.service.js');
+module.exports = function () {
+  const app = this; // eslint-disable-line no-unused-vars
+  app.configure(users);
+  app.configure(products);
+  app.configure(branches);
+  app.configure(customers);
+  app.configure(motorcycleModels);
+  app.configure(payments);
+  app.configure(permission);
+  app.configure(userPosition);
+  app.configure(reports);
+  app.configure(badRecords);
+  app.configure(brands);
+  app.configure(brand);
+  app.configure(transfers);
+  app.configure(payment);
+  app.configure(secondhand);
+  app.configure(customerSecondhandUnit);
+};

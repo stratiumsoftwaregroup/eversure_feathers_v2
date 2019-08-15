@@ -1,0 +1,16 @@
+// branches-model.js - A mongoose model
+// 
+// See http://mongoosejs.com/docs/models.html
+// for more of what you can do here.
+module.exports = function (app) {
+  const mongooseClient = app.get('mongooseClient');
+  const { Schema } = mongooseClient;
+  const branches = new Schema({
+    branch_name: {type: String, required: true, unique: true },
+    date_added: {type: Date, default: Date.now}
+  }, {
+    timestamps: true
+  });
+
+  return mongooseClient.model('branches', branches);
+};
